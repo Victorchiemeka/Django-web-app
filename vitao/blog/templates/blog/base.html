@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+{% if title %} 
+ <title>Vitao Blog - {{title}}</title>
+{% else %}
+ <title>Vitao Blog</title>
+{% endif %}
+    <style>
+   
+    </style>
+</head>
+<body>
+     <div class="navbar">
+        <ul>
+            <li><a href="{% url 'blog-home' %}">Home</a></li>
+            <li><a href="{% url 'blog-about' %}">About</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
